@@ -1,0 +1,41 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "Build Raycaster",
+            "command": "C:/raylib/w64devkit/bin/g++.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${workspaceFolder}/main.cpp",
+                "${workspaceFolder}/Player.cpp",
+                "${workspaceFolder}/Wall.cpp",
+                "${workspaceFolder}/Raycaster.cpp",
+                "-o",
+                "${workspaceFolder}/main.exe",
+                "-IC:/raylib/raylib/src",
+                "-LC:/raylib/raylib/src",
+                "-lraylib",
+                "-lopengl32",
+                "-lgdi32",
+                "-lwinmm"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "compiler: C:/raylib/w64devkit/bin/g++.exe"
+        },
+        {
+            "label": "Run Raycaster",
+            "type": "shell",
+            "command": "${workspaceFolder}/main.exe",
+            "dependsOn": "Build Raycaster",
+            "problemMatcher": []
+        }
+    ],
+    "version": "2.0.0"
+}
